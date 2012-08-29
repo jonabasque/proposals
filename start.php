@@ -26,6 +26,10 @@ function proposals_init() {
 	add_group_tool_option('proposals', elgg_echo('proposals:enableproposals'), false);
 	elgg_extend_view('groups/tool_latest', 'proposals/group_module');
 
+	// 
+	$action_path = elgg_get_plugins_path() . 'proposals/actions/proposals';
+	elgg_register_action("proposals/vote", "$action_path/vote.php");
+
 	// data types
 	elgg_set_config('decission', array(
 		'title' => 'text',

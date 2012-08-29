@@ -39,6 +39,10 @@ $english = array(
 	'proposals:proposal:group' => 'Group proposals',
 	'proposals:proposal:write' => 'Write a proposal',
 
+	// Votes
+	'proposals:vote:create' => 'You set your vote to %s',
+	'proposals:vote:update' => 'You updated your vote to %s',
+
 	// river
 	'river:create:object:decission' => '%s submitted a decission %s',
 	'river:create:object:proposal' => '%s submitted a proposal %s',
