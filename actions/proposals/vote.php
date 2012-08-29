@@ -11,7 +11,7 @@
    }
 
 
-   $options = array('guid' => $guid, 'annotation_name' => 'votes', 'owner_guid' => $user->guid);
+   $options = array('guid' => (int)$guid, 'annotation_name' => 'votes', 'annotation_owner_guid' => $user->guid);
    $annotations = elgg_get_annotations($options);
    
    if (is_array($annotations) && count($annotations)) {
