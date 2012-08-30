@@ -11,19 +11,13 @@
    }
 
 
-   $options = array('guid' => (int)$guid, 'annotation_name' => 'votes', 'annotation_owner_guid' => $user->guid);
+   $options = array('guid' => (int)$guid,
+		    'annotation_name' => 'votes',
+		    'annotation_owner_guid' => $user->guid);
+
    $annotations = elgg_get_annotations($options);
    
    if (is_array($annotations) && count($annotations)) {
-   	$annotation = create_annotation($guid,
-                                        'votes',
-                                        $vote,
-                                        "",
-                                        $user->guid,
-                                        $entity->access_id);
-        system_message(elgg_echo("proposals:vote:update", array($vote.count($annotations))));
-
-   } else {
 	$annotation = $annotations[0];
         $id = $annotation->id;
    	update_annotation($id,
@@ -32,7 +26,16 @@
                                         "",
                                         $user->guid,
                                         $entity->access_id);
-        system_message(elgg_echo("proposals:vote:create", array($vote.$user->guid)));
+        system_message(elgg_echo("proposals:vote:update", array($vote)));
+   } else {
+   	$annotation = create_annotation($guid,
+                                        'votes',
+                                        $vote,
+                                        "",
+                                        $user->guid,
+                                        $entity->access_id);
+        system_message(elgg_echo("proposals:vote:create", array($vote)));
+
    }
 
 
