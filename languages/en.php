@@ -43,6 +43,16 @@ $english = array(
 	// Votes
 	'proposals:vote:create' => 'You set your vote to %s',
 	'proposals:vote:update' => 'You updated your vote to %s',
+	'proposals:votes:consensus' => 'Consensus',
+	'proposals:votes:no_consensus' => 'No consensus',
+	'proposals:votes:blocked' => 'Blocked',
+	'proposals:votes:new' => 'New',
+	'proposals:votes:status' => 'status',
+	'proposals:votes:total' => 'total',
+	'proposals:votes:yes' => 'yes',
+	'proposals:votes:no' => 'no',
+	'proposals:votes:block' => 'block',
+	'proposals:votes:abstain' => 'abstain',
 
 	// river
 	'river:create:object:decission' => '%s submitted a decission %s',

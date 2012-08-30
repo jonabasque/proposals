@@ -24,12 +24,16 @@
    }
 
    $points = $counts["yes"] - ($counts["no"] + $counts["block"]);
-   $status = "no consensus";
+   if ($points > 0)
+	$points = "+".$points;
+   $status = "no_consensus";
    if ($counts["block"])
      $status = "blocked";
+   elseif ($total_votes < $member_count/2)
+     $status = "new";
    elseif ($counts["no"] >= $member_count / 2)
-     $status = "no consensus";
-   elseif ($counts["yes"] > $counts["no"])
+     $status = "no_consensus";
+   elseif (($counts["yes"] > $counts["no"]+($member_count-$total_votes)))
      $status = "consensus";
   
    if (is_array($my_annotations) && count($my_annotations)) {
@@ -38,10 +42,13 @@
         
    }
 
-
+   echo "<div class='votes-points votes-status-$status'>";
+   echo "$points";
+   echo "</div>";
+   echo "<div class='votes-info'>";
    $buttons = array('yes', 'no', 'block', 'abstain');
    foreach($buttons as $button) {
-     $button_text = $button;
+     $button_text = elgg_echo("proposals:votes:$button");
      if (!empty($counts[$button])) {
          $button_text .= " (".$counts[$button].")";
      }
@@ -57,7 +64,10 @@
      }
      echo " ";
    }
+   $status_text = elgg_echo("proposals:votes:$status");
    echo "<br />";
-   echo "total: $total_votes/$member_count<br />";
-   echo "points: $points<br />";
-   echo "status: $status";
+   echo elgg_echo("proposals:votes:total").": $total_votes/$member_count<br />";
+   echo elgg_echo("proposals:votes:status").": $status_text";
+   echo "</div>";
+   echo "<div class='clearfloat'>";
+   echo "</div>";
