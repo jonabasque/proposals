@@ -39,4 +39,5 @@
    }
 
 
-   forward($entity->getURL());
+   forward(REFERER);
+   //forward($entity->getURL());

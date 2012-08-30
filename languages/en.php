@@ -13,6 +13,7 @@ $english = array(
 	'proposals:proposal:none' => 'No proposals created yet',
 	'item:object:proposal' => 'Proposals',
 	'proposal:add' => 'Create proposal',
+	'proposal:edit' => 'Edit proposal',
 
 	// Proposal attributes
 	'proposals:proposal:title' => 'Title',
