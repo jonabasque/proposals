@@ -37,7 +37,7 @@ $english = array(
 	'proposals:decission:owner' => 'Created by %s',
 
 	// Group module
-	'proposals:proposal:group' => 'Group proposals',
+	'proposals:proposal:group' => 'Group decissions',
 	'proposals:proposal:write' => 'Write a proposal',
 
 	// Votes
