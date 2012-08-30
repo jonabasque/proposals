@@ -16,7 +16,7 @@
 }
 
 .votes-info {
-	margin:0.5em;
+	margin:1em;
 	height:auto;
 	float:left;
 }
