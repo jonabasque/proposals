@@ -25,7 +25,7 @@ $english = array(
 	// Decissions
 	'proposals:decission:none' => 'No decissions created yet',
 	'item:object:decission' => 'Decissions',
-	'decission:add' => 'Create decission',
+	'decission:add' => 'Create new decission',
 	'proposals:decission:children' => 'Proposals',
 	'crud:decission:nochildren' => 'No proposals created yet',
 
