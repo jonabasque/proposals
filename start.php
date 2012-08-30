@@ -31,28 +31,28 @@ function proposals_init() {
 	elgg_register_action("proposals/vote", "$action_path/vote.php");
 
 	// data types
-	elgg_set_config('decission', array(
+	$variables = array(
 		'title' => 'text',
 		'description' => 'longtext',
 		#'tags' => 'tags',
 		'access_id' => 'access',
-	));
+	);
 	
 	if (elgg_is_active_plugin('crud')) {
-		$crud = crud_register_type('decission');
+		$crud = crud_register_type('decission', $variables);
 		$crud->children_type = 'proposal';
 		$crud->module = 'proposals';
 	}
 
-	elgg_set_config('proposal', array(
+	$variables = array(
 		'title' => 'text',
 		'description' => 'longtext',
 		'tags' => 'tags',
 		'access_id' => 'access',
-	));
+	);
 	
 	if (elgg_is_active_plugin('crud')) {
-		$crud = crud_register_type('proposal');
+		$crud = crud_register_type('proposal', $variables);
 		#$crud->children_type = 'agenda_point';
 		$crud->module = 'proposals';
 	}
