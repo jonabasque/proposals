@@ -54,6 +54,9 @@ $english = array(
 	'proposals:votes:block' => 'block',
 	'proposals:votes:abstain' => 'abstain',
 
+	// Other
+	'decission:childof' => 'From assembly on %s',
+
 	// river
 	'river:create:object:decission' => '%s submitted a decission %s',
 	'river:create:object:proposal' => '%s submitted a proposal %s',
