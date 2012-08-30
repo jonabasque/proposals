@@ -1,17 +1,16 @@
 <?php
 /**
- * Assemblies CSS
+ * Proposals CSS
  *
- * @package Assemblies
+ * @package Proposals
 */
 ?>
 
-/* Assemblies Plugin */
+/* Proposals Plugin */
 
 .votes-points {
 	font-size:4em;
-	margin:20px;
-	height:auto;
+	margin:0.5em;
 	float:left;
 }
 
