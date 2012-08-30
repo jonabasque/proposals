@@ -33,12 +33,12 @@ if (!$content) {
 
 $new_link = elgg_view('output/url', array(
 	'href' => "decission/add/$group->guid",
-	'text' => elgg_echo('proposals:proposal:write'),
+	'text' => elgg_echo('proposals:decission:write'),
 	'is_trusted' => true,
 ));
 
 echo elgg_view('groups/profile/module', array(
-	'title' => elgg_echo('proposals:proposal:group'),
+	'title' => elgg_echo('proposals:decission:group'),
 	'content' => $content,
 	'all_link' => $all_link,
 	'add_link' => $new_link,

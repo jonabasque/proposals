@@ -7,7 +7,7 @@
 $english = array(
 	'proposals' => 'Proposals',
 	'proposals:enableproposals' => 'Enable group proposals',
-	'proposals:proposal:group' => 'Group decissions',
+	'proposals:decission:group' => 'Group decissions',
 
 	// Proposals
 	'proposals:proposal:none' => 'No proposals created yet',
@@ -38,7 +38,7 @@ $english = array(
 
 	// Group module
 	'proposals:proposal:group' => 'Group decissions',
-	'proposals:proposal:write' => 'Write a proposal',
+	'proposals:decission:write' => 'Write a new decission',
 
 	// Votes
 	'proposals:vote:create' => 'You set your vote to %s',
