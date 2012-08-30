@@ -41,7 +41,11 @@ function proposals_init() {
 	if (elgg_is_active_plugin('crud')) {
 		$crud = crud_register_type('decission', $variables);
 		$crud->children_type = 'proposal';
-		$crud->module = 'proposals';
+		// the following is to not overwrite module if assemblies set it
+		// before, since we don't need explicit module.
+		if ($crud->module == 'decission')
+			$crud->module = 'proposals';
+		//$crud->module = 'proposals';
 	}
 
 	$variables = array(
