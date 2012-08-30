@@ -22,9 +22,6 @@ function proposals_init() {
 	// add group assemblies link to
 	elgg_register_plugin_hook_handler('register', 'menu:owner_block', 'proposals_owner_block_menu');
 
-	if (elgg_is_active_plugin('assemblies')) {
-	        elgg_register_plugin_hook_handler('crud:decission:view_buttons', 'view_buttons', 'proposals_decission_view_buttons');
-	}
 	// Add group option
 	add_group_tool_option('proposals', elgg_echo('proposals:enableproposals'), false);
 	elgg_extend_view('groups/tool_latest', 'proposals/group_module');
@@ -32,7 +29,6 @@ function proposals_init() {
 	// 
 	$action_path = elgg_get_plugins_path() . 'proposals/actions/proposals';
 	elgg_register_action("proposals/vote", "$action_path/vote.php");
-	elgg_register_action("proposals/link", "$action_path/link.php");
 
 	// data types
 	$variables = array(
@@ -81,17 +77,4 @@ function proposals_owner_block_menu($hook, $type, $return, $params) {
 	return $return;
 }
 
-
-function proposals_decission_view_buttons($hook, $type, $return, $params) {
-    $entity = $params['entity'];
-    if (empty($entity->parent_guid)) {
-        elgg_register_menu_item('title', array(
-                                'name' => 'link',
-                                'href' => "action/proposals/link?guid=$entity->guid",
-                                'text' => elgg_echo("proposals:decission:link"),
-                                'is_action' => true,
-                                'link_class' => 'elgg-button elgg-button-action',
-                        ));
-    }
-}
 

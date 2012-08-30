@@ -40,12 +40,6 @@ $english = array(
 	'proposals:proposal:group' => 'Group decissions',
 	'proposals:decission:write' => 'Start a new decission',
 
-	// Other
-	'proposals:decission:link' => 'Link to next assembly',
-	'proposals:decission:linked' => 'Linked proposal to the next assembly',
-	'proposals:decission:cantlink' => 'Cant link the proposal',
-	'proposals:decission:nonext' => 'There are no pending assemblies',
-
 	// Votes
 	'proposals:vote:create' => 'You set your vote to %s',
 	'proposals:vote:update' => 'You updated your vote to %s',
