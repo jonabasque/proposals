@@ -32,7 +32,7 @@ if (!$content) {
 }
 
 $new_link = elgg_view('output/url', array(
-	'href' => "proposal/add/$group->guid",
+	'href' => "decission/add/$group->guid",
 	'text' => elgg_echo('proposals:proposal:write'),
 	'is_trusted' => true,
 ));
