@@ -12,6 +12,10 @@ elgg_register_event_handler('init', 'system', 'proposals_init');
  * Init proposals plugin.
  */
 function proposals_init() {
+	
+	if (!elgg_is_active_plugin('crud')) {
+		return;
+	}
 
 	// add to the main css
 	elgg_extend_view('css/elgg', 'proposals/css');
@@ -38,28 +42,30 @@ function proposals_init() {
 		'access_id' => 'access',
 	);
 	
-	if (elgg_is_active_plugin('crud')) {
-		$crud = crud_register_type('decission', $variables);
-		$crud->children_type = 'proposal';
-		// the following is to not overwrite module if assemblies set it
-		// before, since we don't need explicit module.
-		if ($crud->module == 'decission')
-			$crud->module = 'proposals';
-		//$crud->module = 'proposals';
+	$crud = crud_register_type('decission', $variables);
+	$crud->children_type = 'proposal';
+	// the following is to not overwrite module if assemblies set it
+	// before, since we don't need explicit module.
+	if ($crud->module == 'decission') {
+		$crud->module = 'proposals';
 	}
+	//$crud->module = 'proposals';
 
 	$variables = array(
 		'title' => 'text',
 		'description' => 'longtext',
 		'tags' => 'tags',
 		'access_id' => 'access',
+		'improves_guid' => array(
+			'input_type' => 'hidden',
+			'output_type' => 'proposal',
+			'default_value' => get_input('improves'),
+		),
 	);
 	
-	if (elgg_is_active_plugin('crud')) {
-		$crud = crud_register_type('proposal', $variables);
-		#$crud->children_type = 'agenda_point';
-		$crud->module = 'proposals';
-	}
+	$crud = crud_register_type('proposal', $variables);
+	#$crud->children_type = 'agenda_point';
+	$crud->module = 'proposals';
 }
 
 /**
@@ -76,5 +82,3 @@ function proposals_owner_block_menu($hook, $type, $return, $params) {
 
 	return $return;
 }
-
-
