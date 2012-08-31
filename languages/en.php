@@ -37,8 +37,8 @@ $english = array(
 	'proposals:decission:owner' => 'Created by %s',
 
 	// Group module
-	'proposals:proposal:group' => 'Group decissions',
 	'proposals:decission:write' => 'Start a new decission',
+	'proposals:decission:group' => 'Group decissions',
 
 	// Votes
 	'proposals:vote:create' => 'You set your vote to %s',
