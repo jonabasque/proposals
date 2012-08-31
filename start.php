@@ -51,8 +51,9 @@ function proposals_init() {
 		'tags' => 'tags',
 		'access_id' => 'access',
 		'improves_guid' => array(
-			'input_type' => 'hidden',
-			'output_type' => 'proposal',
+			'type' => 'url',
+			'input_view' => 'hidden',
+			'output_view' => 'proposal',
 			'default_value' => get_input('improves'),
 		),
 	);
