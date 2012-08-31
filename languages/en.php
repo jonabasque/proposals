@@ -56,6 +56,7 @@ $english = array(
 
 	// Other
 	'decission:childof' => 'From assembly on %s',
+	'proposal:childof' => 'Proposal for %s',
 
 	// river
 	'river:create:object:decission' => '%s submitted a decission %s',
