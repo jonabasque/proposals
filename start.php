@@ -44,6 +44,7 @@ function proposals_init() {
 		$crud->module = 'proposals';
 	}
 	//$crud->module = 'proposals';
+	$crud->owner_menu = 'group';
 
 	$variables = array(
 		'title' => 'text',
