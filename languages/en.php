@@ -7,7 +7,7 @@
 $english = array(
 	'proposals' => 'Proposals',
 	'proposals:enableproposals' => 'Enable group proposals',
-	'proposals:decission:group' => 'Group decissions',
+	'decission:group' => 'Group decissions',
 
 	// Proposals
 	'proposals:proposal:none' => 'No proposals created yet',
