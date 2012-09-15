@@ -17,10 +17,10 @@ if ($votes_list) {
                 'text' => $vars['text'],
                 'title' => elgg_echo('proposals:votes:see'),
                 'rel' => 'popup',
-                'href' => "#likes-$guid"
+                'href' => "#votes-$guid"
         );
         $list = elgg_view('output/url', $params);
-        $list .= "<div class='elgg-module elgg-module-popup elgg-likes hidden clearfix' id='likes-$guid'>";
+        $list .= "<div class='elgg-module elgg-module-popup elgg-likes hidden clearfix' id='votes-$guid'>";
         $list .= $votes_list;
         $list .= "</div>";
         echo $list;
