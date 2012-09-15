@@ -4,7 +4,7 @@
  *
  */
 
-$english = array(
+$spanish = array(
 	'proposals' => 'Propuestas',
 	'proposals:enableproposals' => 'Activar las propuestas en el grupo',
 	'decission:group' => 'Decisiones del grupo',
