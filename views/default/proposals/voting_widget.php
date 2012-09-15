@@ -66,7 +66,12 @@
    }
    $status_text = elgg_echo("proposals:votes:$status");
    echo "<br />";
-   echo elgg_echo("proposals:votes:total").": $total_votes/$member_count<br />";
+
+   $votes_options = array('entity'=>$vars['entity'],
+			'text' => "$total_votes/$member_count"
+		);
+   $votes_link = elgg_view('proposals/voting_popup', $votes_options);
+   echo elgg_echo("proposals:votes:total").": $votes_link<br />";
    echo elgg_echo("proposals:votes:status").": $status_text";
    echo "</div>";
    echo "<div class='clearfloat'>";

@@ -54,6 +54,11 @@ $english = array(
 	'proposals:votes:block' => 'block',
 	'proposals:votes:abstain' => 'abstain',
 
+	// Vote popup
+	'proposals:votes:uservoteedthis' => '%s vote',
+	'proposals:votes:usersvotedthis' => '%s votes',
+	'proposals:votes:see' => 'See votes',
+
 	// Other
 	'decission:childof' => 'From assembly on %s',
 	'proposal:childof' => 'Proposal for %s',
