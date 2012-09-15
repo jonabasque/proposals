@@ -6,5 +6,6 @@
    $annotations = elgg_get_annotations($options);
    $total_votes = count($annotations);
 
-   echo elgg_view_annotation_list($annotations);
+   if ($total_votes)
+	   echo elgg_view_annotation_list($annotations);
 

@@ -12,7 +12,7 @@ $votes_list = elgg_view('proposals/voting_results', $vars);
 $num_of_votes = 6;
 $guid = $vars['entity']->getGUID();
 
-if ($num_of_votes) {
+if ($votes_list) {
         $params = array(
                 'text' => $vars['text'],
                 'title' => elgg_echo('proposals:votes:see'),
@@ -24,5 +24,8 @@ if ($num_of_votes) {
         $list .= $votes_list;
         $list .= "</div>";
         echo $list;
+}
+else {
+	echo $vars['text'];
 }
 
