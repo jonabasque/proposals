@@ -53,6 +53,7 @@ $spanish = array(
 	'proposals:votes:no' => 'no',
 	'proposals:votes:block' => 'bloquear',
 	'proposals:votes:abstain' => 'abstenerse',
+	'proposals:votes:comment' => 'Comentario que añadir al voto',
 
 	// Vote popup
 	'proposals:votes:uservoteedthis' => '%s voto',

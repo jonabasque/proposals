@@ -1,6 +1,7 @@
 <?php
    $vote = get_input('value');
    $guid = get_input('guid');
+   $comment = get_input('vote_comment');
 
    $entity = get_entity($guid);
    $user = elgg_get_logged_in_user_entity();
@@ -17,6 +18,15 @@
 
    $annotations = elgg_get_annotations($options);
    
+   if ($comment) {
+   	$comment = create_annotation($guid,
+                                        'vote_comments',
+                                        $comment,
+                                        "",
+                                        $user->guid,
+                                        $entity->access_id);
+   }
+
    if (is_array($annotations) && count($annotations)) {
 	$annotation = $annotations[0];
         $id = $annotation->id;

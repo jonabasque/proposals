@@ -5,9 +5,11 @@
  *  @uses $vars['entity']
  */
 
+$view = $vars['view'];
+$namespace = $vars['namespace'];
 
 $list = '';
-$votes_list = elgg_view('proposals/voting_results', $vars);
+$votes_list = elgg_view("proposals/$view", $vars);
 
 $num_of_votes = 6;
 $guid = $vars['entity']->getGUID();
@@ -17,10 +19,10 @@ if ($votes_list) {
                 'text' => $vars['text'],
                 'title' => elgg_echo('proposals:votes:see'),
                 'rel' => 'popup',
-                'href' => "#votes-$guid"
+                'href' => "#$namespace-$view-$guid"
         );
         $list = elgg_view('output/url', $params);
-        $list .= "<div class='elgg-module elgg-module-popup elgg-likes hidden clearfix' id='votes-$guid'>";
+        $list .= "<div class='elgg-module elgg-module-popup elgg-likes hidden clearfix' id='$namespace-$view-$guid'>";
         $list .= $votes_list;
         $list .= "</div>";
         echo $list;

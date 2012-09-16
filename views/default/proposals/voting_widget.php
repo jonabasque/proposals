@@ -56,11 +56,19 @@
        echo $button_text;
      }
      else {
-       echo elgg_view('output/url', array(
+         $votes_options = array('entity'=>$vars['entity'],
+			'view' => "voting_form",
+			'namespace' => $button,
+			'form_options' => array('value'=>$button, 'guid'=>$entity->guid),
+			'text' => "$button_text"
+	 );
+   	 echo elgg_view('proposals/voting_popup', $votes_options);
+
+ /*      echo elgg_view('output/url', array(
           'href' => "action/proposals/vote?value=$button&guid=$entity->guid",
           'text' => $button_text,
           'is_action' => true,
-       ));
+       ));*/
      }
      echo " ";
    }
@@ -68,6 +76,7 @@
    echo "<br />";
 
    $votes_options = array('entity'=>$vars['entity'],
+			'view' => "voting_results",
 			'text' => "$total_votes/$member_count"
 		);
    $votes_link = elgg_view('proposals/voting_popup', $votes_options);
