@@ -14,7 +14,7 @@
    $my_annotations = elgg_get_annotations($options);
 
    $counts = array();
-   foreach(array("yes", "no", "block", "abstain") as $namen) {
+   foreach(array("yes", "no", "block", "abstain") as $name) {
        $counts[$name] = 0;
    }
    foreach($annotations as $annotation) {
@@ -73,15 +73,14 @@
      echo " ";
    }
    $status_text = elgg_echo("proposals:votes:$status");
-   echo "<br />";
 
    $votes_options = array('entity'=>$vars['entity'],
 			'view' => "voting_results",
 			'text' => "$total_votes/$member_count"
 		);
    $votes_link = elgg_view('proposals/voting_popup', $votes_options);
-   echo elgg_echo("proposals:votes:total").": $votes_link<br />";
-   echo elgg_echo("proposals:votes:status").": $status_text";
+   echo '<div>' . elgg_echo("proposals:votes:total").": $votes_link</div>";
+   echo '<div>' . elgg_echo("proposals:votes:status").": $status_text</div>";
    echo "</div>";
    echo "<div class='clearfloat'>";
    echo "</div>";
