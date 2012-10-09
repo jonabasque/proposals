@@ -17,6 +17,9 @@ function proposals_init() {
 		return;
 	}
 
+	// register proposals library
+	elgg_register_library('elgg:proposals', elgg_get_plugins_path() . 'proposals/lib/proposals.php');
+	
 	// add to the main css
 	elgg_extend_view('css/elgg', 'proposals/css');
 

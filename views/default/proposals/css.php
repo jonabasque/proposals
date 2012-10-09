@@ -15,9 +15,7 @@
 }
 
 .votes-info {
-	margin:1em;
-	height:auto;
-	float:left;
+	margin: 20px;
 }
 
 .votes-status-consensus {

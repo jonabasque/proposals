@@ -1,86 +1,61 @@
 <?php
 
-   $entity = elgg_extract('entity', $vars, FALSE);
-   $user = elgg_get_logged_in_user_entity();
+elgg_load_library('elgg:proposals');
 
-   $group = $entity->getContainerEntity();
-   $member_count = $group->getMembers(0, 0, true);
+$entity = elgg_extract('entity', $vars, FALSE);
 
-   $options = array('guid' => $entity->guid, 'annotation_name' => 'votes');
-   $annotations = elgg_get_annotations($options);
-   $total_votes = count($annotations);
+$votes = proposals_get_votes($entity);
+$member_count = $entity->getContainerEntity()->getMembers(0, 0, true);	
 
-   $options = array('guid' => $entity->guid, 'annotation_name' => 'votes', 'annotation_owner_guid' => $user->guid);
-   $my_annotations = elgg_get_annotations($options);
+$status = proposals_get_status_from_votes($votes, $member_count);
+$points = proposals_get_points_from_votes($votes);
 
-   $counts = array();
-   foreach(array("yes", "no", "block", "abstain") as $name) {
-       $counts[$name] = 0;
-   }
-   foreach($annotations as $annotation) {
-       if (!isset($counts[$annotation->value]))
-          $counts[$annotation->value] = 0;
-       $counts[$annotation->value] += 1;
-   }
+$my_annotation = current(elgg_get_annotations(array(
+	'guid' => $entity->guid,
+	'annotation_name' => 'votes',
+	'annotation_owner_guid' => elgg_get_logged_in_user_guid(),
+)));
 
-   $points = $counts["yes"] - ($counts["no"] + $counts["block"]);
-   if ($points > 0)
-	$points = "+".$points;
-   $status = "no_consensus";
-   if ($counts["block"])
-     $status = "blocked";
-   elseif ($total_votes < $member_count/2)
-     $status = "new";
-   elseif ($counts["no"] >= $member_count / 2)
-     $status = "no_consensus";
-   elseif (($counts["yes"] > $counts["no"]+($member_count-$total_votes)))
-     $status = "consensus";
-  
-   if (is_array($my_annotations) && count($my_annotations)) {
-	$annotation = $my_annotations[0];
-	$selected = $annotation->value;
-        
-   }
-
-   echo "<div class='votes-points votes-status-$status'>";
-   echo "$points";
-   echo "</div>";
-   echo "<div class='votes-info'>";
-   $buttons = array('yes', 'no', 'block', 'abstain');
-   foreach($buttons as $button) {
-     $button_text = elgg_echo("proposals:votes:$button");
-     if (!empty($counts[$button])) {
-         $button_text .= " (".$counts[$button].")";
-     }
-     if ($button == $selected) {
-       echo $button_text;
-     }
-     else {
-         $votes_options = array('entity'=>$vars['entity'],
+$buttons = array('yes', 'no', 'block', 'abstain');
+$content = "";
+foreach($buttons as $button) {
+	$button_text = elgg_echo("proposals:votes:$button");
+	if (!empty($votes[$button])) {
+		$button_text .= " (".$votes[$button].")";
+	}
+	if ($button == $my_annotation->value) {
+		$content .= $button_text;
+	}
+	else {
+		$content .= elgg_view('proposals/voting_popup', array(
+			'entity' => $vars['entity'],
 			'view' => "voting_form",
 			'namespace' => $button,
-			'form_options' => array('value'=>$button, 'guid'=>$entity->guid),
-			'text' => "$button_text"
-	 );
-   	 echo elgg_view('proposals/voting_popup', $votes_options);
+			'form_options' => array('value' => $button, 'guid' => $entity->guid),
+			'text' => "$button_text",
+		));
+	}
+	$content .= " ";
+}
+$status_text = elgg_echo("proposals:votes:$status");
 
- /*      echo elgg_view('output/url', array(
-          'href' => "action/proposals/vote?value=$button&guid=$entity->guid",
-          'text' => $button_text,
-          'is_action' => true,
-       ));*/
-     }
-     echo " ";
-   }
-   $status_text = elgg_echo("proposals:votes:$status");
+$votes_link = elgg_view('proposals/voting_popup', array(
+	'entity' => $vars['entity'],
+	'view' => "voting_results",
+	'text' => array_sum($votes) . "/" . $member_count,
+));
 
-   $votes_options = array('entity'=>$vars['entity'],
-			'view' => "voting_results",
-			'text' => "$total_votes/$member_count"
-		);
-   $votes_link = elgg_view('proposals/voting_popup', $votes_options);
-   echo '<div>' . elgg_echo("proposals:votes:total").": $votes_link</div>";
-   echo '<div>' . elgg_echo("proposals:votes:status").": $status_text</div>";
-   echo "</div>";
-   echo "<div class='clearfloat'>";
-   echo "</div>";
+$total_label = elgg_echo("proposals:votes:total");
+$status_label = elgg_echo("proposals:votes:status");
+
+echo <<<HTML
+<div class="votes-points votes-status-$status">
+	$points
+</div>
+<div class="votes-info">
+	$content
+
+<div><label>$total_label</label> $votes_link</div>
+<div><label>$status_label</label> $status_text</div>
+</div>
+HTML;
