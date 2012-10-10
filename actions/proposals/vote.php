@@ -1,5 +1,5 @@
 <?php
-   $vote = get_input('value');
+   $vote = get_input('vote');
    $guid = get_input('guid');
    $comment = get_input('vote_comment');
 

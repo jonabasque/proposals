@@ -5,14 +5,8 @@
  * @package Assemblies
  */
 
-$group = get_entity($vars['guid']);
-$value = $vars['value'];
-$vars['entity'] = $group;
-
-// Grab variables
-$periodicity = $group->assembly_periodicity;
-
-$vars['periodicity'] = $periodicity;
+$guid = $vars['guid'];
+$vote = $vars['vote'];
 
 $action_buttons = '';
 
@@ -29,8 +23,8 @@ $comment_input = elgg_view('input/text', array(
 ));
 
 // hidden inputs
-$hidden_input = elgg_view('input/hidden', array('name' => 'guid', 'value' => $vars['guid']));
-$hidden_input .= elgg_view('input/hidden', array('name' => 'value', 'value' => $value));
+$guid_input = elgg_view('input/hidden', array('name' => 'guid', 'value' => $guid));
+$vote_input .= elgg_view('input/hidden', array('name' => 'vote', 'value' => $vote));
 
 
 echo <<<___HTML
@@ -41,7 +35,8 @@ echo <<<___HTML
 </div>
 
 <div class="elgg-foot">
-	$hidden_input
+	$guid_input
+	$vote_input
 	$action_buttons
 </div>
 
