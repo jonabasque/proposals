@@ -1,79 +1,53 @@
 <?php
-/**
- * Assembly Spanish language file.
- *
- */
-
-$spanish = array(
-	'proposals' => 'Propuestas',
-	'proposals:enableproposals' => 'Activar las propuestas en el grupo',
-	'decission:group' => 'Decisiones del grupo',
-
-	// Proposals
-	'proposals:proposal:none' => 'No hay propuestas creadas',
-	'item:object:proposal' => 'Propuestas',
-	'proposal:add' => 'Crear una propuesta',
-	'proposal:edit' => 'Editar una propuesta',
-
-	// Proposal attributes
-	'proposals:proposal:title' => 'Título',
-	'proposals:proposal:description' => 'Descripción',
-	'proposals:proposal:tags' => 'Tags',
-	'proposals:proposal:access_id' => 'Acceso',
-	'proposals:proposal:owner' => 'Creada por %s',
-
-	// Decissions
-	'proposals:decission:none' => 'No hay decisiones creadas',
-	'item:object:decission' => 'Decisiones',
-	'decission:add' => 'Crear una nueva decisión',
-	'proposals:decission:children' => 'Propuestas',
-	'crud:decission:nochildren' => 'No hay propuestas creadass',
-
-	// Decission attributes
-	'proposals:decission:title' => 'Título',
-	'proposals:decission:description' => 'Objetivo',
-	'proposals:decission:tags' => 'Tags',
-	'proposals:decission:access_id' => 'Acceso',
-	'proposals:decission:owner' => 'Creada por %s',
-
-	// Group module
-	'proposals:decission:write' => 'Comenzar una nueva decisión',
-	'proposals:decission:group' => 'Decisiones del grupo',
-
-	// Votes
-	'proposals:vote:create' => 'Has votado %s',
-	'proposals:vote:update' => 'Has actualizado el voto a %s',
-	'proposals:votes:consensus' => 'Consenso',
-	'proposals:votes:no_consensus' => 'No hay consenso',
-	'proposals:votes:blocked' => 'Bloqueada',
-	'proposals:votes:new' => 'Nueva',
-	'proposals:votes:status' => 'estado',
-	'proposals:votes:total' => 'total',
-	'proposals:votes:yes' => 'si',
-	'proposals:votes:no' => 'no',
-	'proposals:votes:block' => 'bloquear',
-	'proposals:votes:abstain' => 'abstenerse',
-	'proposals:votes:comment' => 'Comentario que añadir al voto',
-
-	// Vote popup
-	'proposals:votes:uservoteedthis' => '%s voto',
-	'proposals:votes:usersvotedthis' => '%s votos',
-	'proposals:votes:see' => 'Ver votos',
-
-	// Other
-	'decission:childof' => 'De la asamblea %s',
-	'proposal:childof' => 'Propuesta para %s',
-	'proposals:proposal:improves_guid' => 'Mejora',
-
-	// river
-	'river:create:object:decission' => '%s ha creado una decisión %s',
-	'river:create:object:proposal' => '%s creado una propuesta %s',
-	'river:edited:object:decission' => '%s ha editado una decisión %s',
-	'river:edited:object:proposal' => '%s ha editado una propuesta %s',
-	'river:comment:object:decission' => '%s ha comentado acerca de una decisión %s',
-	'river:comment:object:proposal' => '%s ha comentado acerca de una propuesta %s',
-
-
+$language = array (
+  'item:object:decission' => 'Decisiones',
+  'decission:add' => 'Crear una nueva decisión',
+  'river:create:object:decission' => '%s ha creado una decisión %s',
+  'river:edited:object:decission' => '%s ha editado una decisión %s',
+  'river:comment:object:decission' => '%s ha comentado acerca de una decisión %s',
+  'proposals' => 'Propuestas',
+  'proposals:enableproposals' => 'Activar propuestas del grupo',
+  'decission:group' => 'Decisiones del grupo',
+  'proposals:proposal:none' => 'No hay propuestas aún',
+  'item:object:proposal' => 'Propuestas',
+  'proposal:add' => 'Crear propuesta',
+  'proposal:edit' => 'Editar propuesta',
+  'proposals:proposal:title' => 'Título',
+  'proposals:proposal:description' => 'Descripción',
+  'proposals:proposal:tags' => 'Etiquetas',
+  'proposals:proposal:access_id' => 'Acceso',
+  'proposals:proposal:owner' => 'Creada por %s',
+  'proposals:decission:none' => 'No hay decisiones aún',
+  'proposals:decission:children' => 'Propuestas',
+  'crud:decission:nochildren' => 'No hay propuestas aún',
+  'proposals:decission:title' => 'Título',
+  'proposals:decission:description' => 'Descripción',
+  'proposals:decission:tags' => 'Etiquetas',
+  'proposals:decission:access_id' => 'Acceso',
+  'proposals:decission:owner' => 'Creada por %s',
+  'proposals:decission:write' => 'Empezar una nueva decisión',
+  'proposals:decission:group' => 'Decisiones del grupo',
+  'proposals:vote:create' => 'Has dado tu voto a %s',
+  'proposals:vote:update' => 'Has actualizado tu voto a %s',
+  'proposals:votes:consensus' => 'Consenso',
+  'proposals:votes:no_consensus' => 'Sin consenso',
+  'proposals:votes:blocked' => 'Bloqueada',
+  'proposals:votes:new' => 'Nueva',
+  'proposals:votes:status' => 'estado',
+  'proposals:votes:total' => 'total',
+  'proposals:votes:yes' => 'sí',
+  'proposals:votes:no' => 'no',
+  'proposals:votes:block' => 'bloquear',
+  'proposals:votes:abstain' => 'abstenerse',
+  'proposals:votes:comment' => 'Añadir un comentario a tu voto',
+  'proposals:votes:uservoteedthis' => 'Voto de %s',
+  'proposals:votes:usersvotedthis' => 'Votos de %s',
+  'proposals:votes:see' => 'Ver votos',
+  'decission:childof' => 'De la asamblea en %s',
+  'proposal:childof' => 'Propuesta para %s',
+  'proposals:proposal:improves_guid' => 'Mejoras',
+  'river:create:object:proposal' => '%s ha enviado la propuesta %s',
+  'river:edited:object:proposal' => '%s ha editado la propuesta %s',
+  'river:comment:object:proposal' => '%s ha comentado en la propuesta %s',
 );
-
-add_translation('es', $spanish);
+add_translation("es", $language);
