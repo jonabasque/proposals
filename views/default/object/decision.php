@@ -1,10 +1,10 @@
 <?php
 /**
- * View for decission object
+ * View for decision object
  *
  * @package Proposals
  *
- * @uses $vars['entity']    The decission object
+ * @uses $vars['entity']    The decision object
  * @uses $vars['full_view'] Whether to display the full view
  */
 

@@ -39,11 +39,11 @@ function proposals_init() {
 		'access_id' => 'access',
 	);
 	
-	$crud = crud_register_type('decission', $variables);
+	$crud = crud_register_type('decision', $variables);
 	$crud->children_type = 'proposal';
 	// the following is to not overwrite module if assemblies set it
 	// before, since we don't need explicit module.
-	if ($crud->module == 'decission') {
+	if ($crud->module == 'decision') {
 		$crud->module = 'proposals';
 	}
 	//$crud->module = 'proposals';

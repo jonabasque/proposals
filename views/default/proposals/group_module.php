@@ -10,7 +10,7 @@ if ($group->proposals_enable != "yes") {
 }
 
 $all_link = elgg_view('output/url', array(
-	'href' => "decission/owner/$group->guid/all",
+	'href' => "decision/owner/$group->guid/all",
 	'text' => elgg_echo('link:view:all'),
 	'is_trusted' => true,
 ));
@@ -18,7 +18,7 @@ $all_link = elgg_view('output/url', array(
 elgg_push_context('widgets');
 $options = array(
 	'type' => 'object',
-	'subtype' => 'decission',
+	'subtype' => 'decision',
 	'container_guid' => elgg_get_page_owner_guid(),
 	'limit' => 6,
 	'full_view' => false,
@@ -32,13 +32,13 @@ if (!$content) {
 }
 
 $new_link = elgg_view('output/url', array(
-	'href' => "decission/add/$group->guid",
-	'text' => elgg_echo('proposals:decission:write'),
+	'href' => "decision/add/$group->guid",
+	'text' => elgg_echo('proposals:decision:write'),
 	'is_trusted' => true,
 ));
 
 echo elgg_view('groups/profile/module', array(
-	'title' => elgg_echo('proposals:decission:group'),
+	'title' => elgg_echo('proposals:decision:group'),
 	'content' => $content,
 	'all_link' => $all_link,
 	'add_link' => $new_link,

@@ -7,7 +7,7 @@
 $english = array(
 	'proposals' => 'Proposals',
 	'proposals:enableproposals' => 'Enable group proposals',
-	'decission:group' => 'Group decissions',
+	'decision:group' => 'Group decisions',
 
 	// Proposals
 	'proposals:proposal:none' => 'No proposals created yet',
@@ -22,23 +22,23 @@ $english = array(
 	'proposals:proposal:access_id' => 'Access',
 	'proposals:proposal:owner' => 'Created by %s',
 
-	// Decissions
-	'proposals:decission:none' => 'No decissions created yet',
-	'item:object:decission' => 'Decissions',
-	'decission:add' => 'Create new decission',
-	'proposals:decission:children' => 'Proposals',
-	'crud:decission:nochildren' => 'No proposals created yet',
+	// Decisions
+	'proposals:decision:none' => 'No decisions created yet',
+	'item:object:decision' => 'Decisions',
+	'decision:add' => 'Create new decision',
+	'proposals:decision:children' => 'Proposals',
+	'crud:decision:nochildren' => 'No proposals created yet',
 
-	// Decission attributes
-	'proposals:decission:title' => 'Title',
-	'proposals:decission:description' => 'Description',
-	'proposals:decission:tags' => 'Tags',
-	'proposals:decission:access_id' => 'Access',
-	'proposals:decission:owner' => 'Created by %s',
+	// Decision attributes
+	'proposals:decision:title' => 'Title',
+	'proposals:decision:description' => 'Description',
+	'proposals:decision:tags' => 'Tags',
+	'proposals:decision:access_id' => 'Access',
+	'proposals:decision:owner' => 'Created by %s',
 
 	// Group module
-	'proposals:decission:write' => 'Start a new decission',
-	'proposals:decission:group' => 'Group decissions',
+	'proposals:decision:write' => 'Start a new decision',
+	'proposals:decision:group' => 'Group decisions',
 
 	// Votes
 	'proposals:vote:create' => 'You set your vote to %s',
@@ -62,16 +62,16 @@ $english = array(
 	'proposals:votes:see' => 'See votes',
 
 	// Other
-	'decission:childof' => 'From assembly on %s',
+	'decision:childof' => 'From assembly on %s',
 	'proposal:childof' => 'Proposal for %s',
 	'proposals:proposal:improves_guid' => 'Improves',
 
 	// river
-	'river:create:object:decission' => '%s submitted a decission %s',
+	'river:create:object:decision' => '%s submitted a decision %s',
 	'river:create:object:proposal' => '%s submitted a proposal %s',
-	'river:edited:object:decission' => '%s edited a decission %s',
+	'river:edited:object:decision' => '%s edited a decision %s',
 	'river:edited:object:proposal' => '%s edited a proposal %s',
-	'river:comment:object:decission' => '%s commented on the decission %s',
+	'river:comment:object:decision' => '%s commented on the decision %s',
 	'river:comment:object:proposal' => '%s commented on the proposal %s',
 
 
