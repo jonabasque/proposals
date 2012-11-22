@@ -26,7 +26,7 @@ $text = elgg_view("output/longtext", array("value" => elgg_echo('proposals:votes
 
 $friendlytime = elgg_view_friendly_time($annotation->time_created);
 
-$options = array('guid' => $annotation->guid, 'metastring_owner_guid' => $annotation->owner_guid, 'annotation_name' => 'vote_comments');
+$options = array('guid' => $annotation->entity_guid, 'metastring_owner_guid' => $annotation->owner_guid, 'annotation_name' => 'vote_comments');
 $comments = elgg_get_annotations($options);
 $total_comments = count($comments);
 if ($total_comments)
