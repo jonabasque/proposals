@@ -25,6 +25,7 @@ $english = array(
 	// Decisions
 	'proposals:decision:none' => 'No decisions created yet',
 	'item:object:decision' => 'Decisions',
+	'proposals:decision' => 'Decision',
 	'decision:add' => 'Create new decision',
 	'proposals:decision:children' => 'Proposals',
 	'crud:decision:nochildren' => 'No proposals created yet',
@@ -55,6 +56,9 @@ $english = array(
 	'proposals:votes:block' => 'block',
 	'proposals:votes:abstain' => 'abstain',
 	'proposals:votes:comment' => 'Add a comment to your vote',
+	'proposals:votes:comment:block' => '<b>Block</ b> means paralyze the proposal, and should only be done if it goes against the principles or the safety of the group, otherwise simply vote "no". If you want to continue, put reason below.',
+	'proposals:votes:cannot' => 'You cannot vote in this decision',
+	'proposals:votes:mandatoryfield' => 'A comment is mandatory to block a proposal',
 
 	// Vote popup
 	'proposals:votes:uservoteedthis' => '%s vote',

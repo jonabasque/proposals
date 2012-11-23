@@ -33,4 +33,6 @@
 	color: white;
 	text-shadow: 0px 0px 5px black;
 }
-
+.elgg-form-proposals-vote {
+	margin: 5px;
+}

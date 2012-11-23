@@ -49,5 +49,6 @@ $language = array (
   'river:create:object:proposal' => '%s ha enviado la propuesta %s',
   'river:edited:object:proposal' => '%s ha editado la propuesta %s',
   'river:comment:object:proposal' => '%s ha comentado en la propuesta %s',
+  'proposals:votes:comment:block' => '<b>Bloquear</b> significa paralizar la propuesta, sólo se debe hacer en caso de que vaya en contra los principios o la seguridad del grupo, en caso contrario, vota sencillamente "no". Si quieres seguir, pon el motivo a continuación.',
 );
 add_translation("es", $language);

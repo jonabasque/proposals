@@ -8,15 +8,16 @@
 $guid = $vars['guid'];
 $vote = $vars['vote'];
 
-$action_buttons = '';
-
 $save_button = elgg_view('input/submit', array(
 	'value' => elgg_echo('save'),
 	'name' => 'save',
 ));
-$action_buttons = $save_button;
 
 $comment_label = elgg_echo('proposals:votes:comment');
+
+if ($vote == 'block') {
+	$block_message = '<p>' . elgg_echo('proposals:votes:comment:block') . '</p>';
+}
 $comment_input = elgg_view('input/text', array(
 	'name' => 'vote_comment',
 	'id' => 'vote_comment'
@@ -30,6 +31,7 @@ $vote_input .= elgg_view('input/hidden', array('name' => 'vote', 'value' => $vot
 echo <<<___HTML
 
 <div>
+	$block_message
 	<label for="vote_comment">$comment_label</label>
 	$comment_input
 </div>
@@ -37,7 +39,7 @@ echo <<<___HTML
 <div class="elgg-foot">
 	$guid_input
 	$vote_input
-	$action_buttons
+	$save_button
 </div>
 
 ___HTML;
