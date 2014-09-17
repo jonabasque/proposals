@@ -5,6 +5,7 @@ function proposals_get_votes($entity) {
 	$annotations = elgg_get_annotations(array(
 		'guid' => $entity->guid,
 		'annotation_name' => 'votes',
+		'limit' => 0
 	));
 
 	$votes = array();
