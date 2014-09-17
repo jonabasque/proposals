@@ -31,6 +31,8 @@ function proposals_init() {
 	$action_path = elgg_get_plugins_path() . 'proposals/actions/proposals';
 	elgg_register_action("proposals/vote", "$action_path/vote.php");
 
+	elgg_register_plugin_hook_handler('permissions_check:annotate', 'object', 'proposals_user_can_vote');
+
 	// data types
 	$variables = array(
 		'title' => 'text',
@@ -65,4 +67,11 @@ function proposals_init() {
 	$crud = crud_register_type('proposal', $variables);
 	#$crud->children_type = 'agenda_point';
 	$crud->module = 'proposals';
+}
+
+function proposals_user_can_vote($hook, $type, $return, $params) {
+	if ($params['annotation_name'] == 'votes') {
+		$return = $params['entity']->getContainerEntity()->isMember($params['user']);
+	}
+	return $return;
 }
