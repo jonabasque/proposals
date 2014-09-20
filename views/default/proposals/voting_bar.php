@@ -8,6 +8,7 @@ foreach ($votes as $vote_type => $result) {
 	$total = array_sum($votes);
 	if ($total) {
 		$percent = $result / $total * 100;
+		$percent = number_format($percent,2);
 	}
 	else {
 		$percent = 0;
